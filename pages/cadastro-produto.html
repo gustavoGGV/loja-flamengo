@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de produto | Loja Flamengo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div id="container-sidebar" class="sidebar-maior col-6 col-lg-2 m-0 p-0"></div>
+
+
+            <div class="content col-12 col-lg-10">
+
+                <div id="container-navbar-cadastro-produto" class="m-0 p-0"></div>
+                
+                <form>
+
+                    <div>
+                        <label for="input-modelo-produto" class="mt-4 form-label">Modelo do produto</label>
+                        <input type="text" class="w-25 form-control" id="input-modelo-produto"
+                            placeholder="Digite o modelo do produto" />
+                    </div>
+
+                    <div>
+                        <label for="input-preco-produto" class="mt-4 form-label">Preço</label>
+                        <input type="number" class="w-25 form-control" id="input-preco-produto" step="0.01"
+                        placeholder="0,00" />
+                    </div>
+
+                    <div>
+                        <label for="input-imagem" class="mt-4 form-label">Imagem</label>
+                        <input type="file" accept="image/*" class="w-50 form-control" id="input-imagem" />
+                        <img id="preview-imagem" class="d-none img-thumbnail my-3 " src="#"/>
+                    </div>
+
+                    <div>
+                        <input type="submit" class="my-4"/>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../scripts/app.js"></script>
+
+    <script>
+
+        const inputImagem = document.getElementById('input-imagem');
+        const previewImagem = document.getElementById('preview-imagem');
+
+        inputImagem.onchange = e => {
+            const [file] = inputImagem.files;
+            if (file) {
+                document.getElementById('preview-imagem').classList.replace("d-none", "d-block");
+                previewImagem.src = URL.createObjectURL(file);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

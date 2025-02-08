@@ -7,9 +7,13 @@ function includeHTML(elementId, file) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    includeHTML("container-sidebar", "components/sidebar.html");
-    includeHTML("container-navbar", "components/navbar.html");
-    includeHTML("container-top-camisas", "components/top-camisas.html")
+    includeHTML("container-sidebar", "../components/sidebar.html");
+    includeHTML("container-navbar-index", "../components/navbar-index.html");
+    includeHTML("container-navbar-cadastro-produto", "../components/navbar-cadastro-produto.html");
+    includeHTML("container-navbar-produtos-cadastrados", "../components/navbar-produtos-cadastrados.html");
+    includeHTML("container-navbar-perfil", "../components/navbar-perfil.html");
+    includeHTML("container-top-camisas", "../components/top-camisas.html");
+    includeHTML("container-tabela-produtos-cadastrados", "../components/tabela-produtos-cadastrados.html");
     
 });
 
